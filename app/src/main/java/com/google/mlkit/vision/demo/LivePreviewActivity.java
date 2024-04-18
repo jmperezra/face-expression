@@ -77,14 +77,9 @@ import java.util.concurrent.Executors;
 public final class LivePreviewActivity extends AppCompatActivity
         implements OnRequestPermissionsResultCallback,
         OnItemSelectedListener,
-        CompoundButton.OnCheckedChangeListener
-
-
-{
+        CompoundButton.OnCheckedChangeListener {
 
     private static final Logger LOGGER = new Logger();
-
-
 
     private LinearLayout gestureLayout;
     protected TextView recognitionTextView,
@@ -105,8 +100,6 @@ public final class LivePreviewActivity extends AppCompatActivity
 
     private static final String OBJECT_DETECTION = "Object Detection";
     private static final String OBJECT_DETECTION_CUSTOM = "Custom Object Detection (Birds)";
-
-
 
 
    // private static final String TEXT_RECOGNITION = "Text Recognition";
@@ -218,7 +211,7 @@ public final class LivePreviewActivity extends AppCompatActivity
 
 
 
-        mode.setMode(Constant.GENDER_OPTION);
+        mode.setMode(Constant.FACE_OPTION);
 
         if (allPermissionsGranted()) {
 
