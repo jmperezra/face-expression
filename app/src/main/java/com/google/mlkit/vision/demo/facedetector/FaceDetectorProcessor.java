@@ -118,20 +118,20 @@ public class FaceDetectorProcessor extends VisionProcessorBase<List<Face>> {
 
 
             final long startTime = SystemClock.uptimeMillis();
-            Bitmap croppedImage = BitmapUtils.cropBitmap( bitmap,   face.getBoundingBox());
-            final List<Classifier.Recognition> results =
-                    classifier.recognizeImage(croppedImage);
-            long lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
-            LOGGER.v("Detect: %s", results);
-            System.out.println(i+" xxx" +results);
+            if (bitmap != null){
+                Bitmap croppedImage = BitmapUtils.cropBitmap( bitmap,   face.getBoundingBox());
+                final List<Classifier.Recognition> results =
+                        classifier.recognizeImage(croppedImage);
+                long lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
+                LOGGER.v("Detect: %s", results);
+                System.out.println(i+" xxx" +results);
 
-            logExtrasForTesting(face);
+                logExtrasForTesting(face);
 
-            LivePreviewActivity imageView = (LivePreviewActivity) context;
-            imageView.showObjectID(i);
-            imageView.showResultsInBottomSheet(results);
-
-
+                LivePreviewActivity imageView = (LivePreviewActivity) context;
+                imageView.showObjectID(i);
+                imageView.showResultsInBottomSheet(results);
+            }
         }
     }
 
