@@ -99,11 +99,7 @@ public class FaceDetectorProcessor extends VisionProcessorBase<List<Face>> {
 
     @Override
     protected Task<List<Face>> detectInImage(InputImage image) {
-
-
         return detector.process(image);
-
-
     }
 
     @Override
